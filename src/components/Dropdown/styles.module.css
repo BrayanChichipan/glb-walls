@@ -1,0 +1,49 @@
+.container {
+	position: relative;
+	width: fit-content;
+	height: fit-content;
+}
+
+.trigger {
+	position: relative;
+	margin-bottom: 0.25rem;
+	/* z-index: 10; */
+}
+
+.content-container {
+	position: absolute;
+	overflow: hidden;
+	top: auto;
+	visibility: hidden;
+
+	.content {
+		position: relative;
+		transition: all 0.25s ease;
+		overflow: visible;
+		z-index: 9;
+	}
+}
+.content-container	.hide {
+		transform: translateY(-100%);
+		opacity: 0;
+	}
+
+	.content-container	.show {
+		transform: translateY(0%);
+		opacity: 1;
+	}
+
+.smooth {
+	animation: hidden 0.25s forwards;
+	visibility: visible;
+}
+
+@keyframes hidden {
+	99% {
+		overflow: hidden;
+	}
+	100% {
+		/* // para lograr ver el boxshadow */
+		overflow: visible;
+	}
+}
